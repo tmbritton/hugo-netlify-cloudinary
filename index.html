@@ -30,14 +30,23 @@
 						<h1>Hugo + Netlify + Cloudinary</h1>
 						<sub>Stupid Simple Static Site Solution</sub>
 						<aside class="notes">
-							I've had some bench time recently and this is one of the projects I've done. It's the one that wasn't just following a tutorial and it only took a few days to spin up a simple site while learning all systems involved.
+							<ul>
+								<li>Bench time recently</li>
+								<li>Art portfolio site, fancytom.com</li>
+								<li>It's one thing I did that wasn't just following a tutorial</li>
+								<li>Figured I should give a talk or something with all the time I've had</li>
+							</ul>							
 						</aside>
 					</section>
 
 					<section>
 						<h2>How is this useful to Mutual Mobile?</h2>
+						<iframe src="https://giphy.com/embed/3oKIPqsXYcdjcBcXL2" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 						<aside class="notes">
-							We're generally not in the business of building simple websites, but if we have to put up a couple of marketing pages in support of an app we build, this could be an easy solution.
+							<ul>
+								<li>We don't build simple websites</li>
+								<li>Could be useful for Marketing pages in support of apps</li>
+							</ul>
 						</aside>
 					</section>
 				</section>
@@ -51,24 +60,49 @@
 							<li>Generated HTML</li>
 						</ul>
 						<aside class="notes">
-							I should probably explain what I mean by "Static Site Generator" because it sounds a bit buzzwordy. Generally how they work is you define some templates, in Hugo's case it's a Go templating system, and content, usually in the case of markdown files with frontmatter metadata. The markdown is run through the templates to generate flat HTML files. These are then served to the user from a file server with no database backend.
+							<ul>
+								<li>Static Site Generator is a bit buzzwordy</li>
+								<li>Write some templates</li>
+								<li>Content, usually Markdown</li>
+								<li>Run the Markdown through the templates to generate HTML</li>
+							</ul>
 						</aside>
 					</section>
 
 					<section>
-						<h1>Why is this a good thing?</h1>
+						<h1>Why is this good?</h1>
 						<p>Years of Wordpress and Drupal have given me PCMSSD</p>
 						<sub>(Post Content Management System Stress Disorder)</sub>
+						<iframe src="https://giphy.com/embed/6b0E44yk4H1Bu" width="480" height="349" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 						<aside class="notes">
-							I don't know who's spent much time supporting CMSes like Wordpress or Drupal, but you can probably relate to my pain. Constant maintenance updates of core and plugins, high-severity security updates that need to go into production immediately, ridiculously tech stacks to get them to run at scale. Multiple MySQL database servers, multiple Apache/NGINX webservers, Memcache, PHP, Varnish HTTP Proxy, CDN in front of Varnish. And just try to get a matching local environment. 
+							<ul>
+								<li>CMSes like Wordpress or Drupal</li>
+								<li>constant updates of core and plugins</li>
+								<li>high-severity security updates</li>
+								<li>ridiculous tech stacks: Multiple MySQL database servers, multiple Apache/NGINX webservers, Memcache, PHP, Varnish HTTP Proxy, CDN in front of Varnish.</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<h1>Drawbacks</h1>
+						<ul>
+							<li>Handling user interaction (form submission)</li>
+							<li>Editing content by non-technical users</li>
+						</ul>
+						<aside class="notes">
+							<li>HTML files with a very minimal server</li>
+							<li>editing is done in a text editor and then checked into a git repo</li>
+							<li>Netlify has done a lot of work with their platform to alleviate these problems</li>
 						</aside>
 					</section>
 
 					<section>
 						<h1>Lots of them</h1>
 						<p>Jekyll, Hugo, Hexo, Octopress, Pelican, Brunch, Metalsmith, Wintersmith, Middleman, Harp, DocPad, Sculpin, etc...</p>
+						<iframe src="https://giphy.com/embed/l0IylOPCNkiqOgMyA" width="480" height="304" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 						<aside class="notes">
-							There's a lot to choose from. It's a fairly arbitrary choise that boils down to personal preference.
+							Arbitrary choise that boils down to personal preference.
 						</aside>
 					</section>
 
@@ -80,20 +114,15 @@
 							<li>Installable binary</li>
 						</ul>
 						<aside class="notes">
-							Hugo is the static site generator I ended up using mostly because it's an installable binary. There are dozens, hundreds of SSGs to choose from. I used Hugo mostly because I wouldn't be tempted to hack it because it's a binary. Compare that to Metalsmith (https://metalsmith.io/) where you string together a system of plugins to hopefully arrive at something. I've gotten started with that before and never actually got around to building the site I was trying to build.
+							Chose Hugo because:
+							<ul>
+								<li>it's an installable binary</li>
+								<li>I wouldn't be tempted to hack it because it's a binary</li>
+								<li>Compare that to <a href="https://metalsmith.io/" target="_blank">Metalsmith</a></li>
+							</ul>
 						</aside>
 					</section>
 
-					<section>
-						<h1>Drawbacks</h1>
-						<ul>
-							<li>Handling user interaction (form submission)</li>
-							<li>Editing content by non-technical users</li>
-						</ul>
-						<aside class="notes">
-							As flat HTML files with a very minimal server, there's not much interactivity. Also most of the editing is done in a text editor and then checked into a git repo, so not particularly user friendly unless you're a dev. However Netlify has done a lot of work with their platform to alleviate these problems.
-						</aside>
-					</section>
 				</section>
 
 				<section>
@@ -107,7 +136,13 @@
 							<li>Free! (at my scale)</li>
 						</ul>
 						<aside class="notes">
-							Netlify was by far the easiest hosting setup I've done. All I had to do was give Netlify permission to the Github repo that contained the Hugo site. 
+							<ul>
+								<li>Easiest hosting setup I've done</li>
+								<li>Just connected it to the github repo</li>
+								<li>Added config file to repo telling it what version of hugo to use</li>
+								<li>Firebase hosting may be an alternative</li>
+								<li>Or and S3 bucket if you're into the whole AWS thing</li>
+							</ul>
 						</aside>
 					</section>
 
@@ -120,7 +155,10 @@
 							<li>Large Media Handling</li>
 						</ul>
 						<aside class="notes">
-							These are some of the features that Netlify offers to work around the limitations of a static site. The only one I used was the form submission handling. It looks like the large media handling probably made Cloudinary redundant. Take a look at the Netlify admin.
+							<ul>
+								<li>The only one I used was the form submission handling</li>
+								<li>large media handling probably made Cloudinary redundant.</li>
+							</ul>
 						</aside>
 					</section>
 
@@ -131,17 +169,39 @@
 					<p>Upload a large image and create resized derivatives based on parameters in the url.</p>
 					<sub>*optional</sub>
 					<aside class="notes">
-						Resizing images is a pain in the ass and Cloudinary takes care of all that. It's another service I've used that just works how I think it should. And at my scale it's free! Take a look at the admin.
+						<ul>
+							<li>Resizing images is a pain in the ass</li>
+							<li>Just works</li>
+
+						</ul>
 					</aside>
 				</section>
 
 				<section>
 					<h3>Bonus!</h3>
-					<h1>PureCSS</h1>
+					<h1>Pure.css</h1>
 					<p>Tiny CSS library that makes things look reasonably good without hijacking the markup.</p>
 					<aside class="notes">
-						When I was styling the site I got the forms and realized I didn't want to decide what all the forms looked like. So I went looking for a small CSS library. I found this one by the people who put out Normalize.css. I've been using that for years. It made the forms look good and apparently you can handle error states in CSS now. Check it out: 
+						<ul>
+							<li>Didn't want to decide what every form element looks like</li>
+							<li>Wanted something smaller than Bootstrap or Foundation</li>
+							<li>By people who made Normalize.css</li>
+							<li>Handles form error states with CSS</li>
+						</ul>
 					</aside>
+				</section>
+
+				<section>
+					<h1>Links</h1>
+					<ul>
+						<li><a href="https://fancytom.com" target="_blank">fancytom.com</a></li>
+						<li><a href="https://github.com/tmbritton/fancytom-hugo" target="_blank">fancytom.com repo</a></li>
+						<li><a href="https://gohugo.io/" target="_blank">Hugo</a></li>
+						<li><a href="https://www.netlify.com/" target="_blank">Netlify</a></li>
+						<li><a href="https://cloudinary.com/" target="_blank">Cloudinary</a></li>
+						<li><a href="https://purecss.io/" target="_blank">Pure.css</a></li>
+						<li><a href="https://revealjs.com/" target="_blank">Reveal.js</a></li>
+					</ul>
 				</section>
 
 			</div>
